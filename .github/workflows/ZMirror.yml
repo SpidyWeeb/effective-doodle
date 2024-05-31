@@ -1,0 +1,19 @@
+name: Z-Mirror Bot
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+
+jobs:
+  run-sync-service:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Downloading the Script
+        run: |
+          wget -qq ${{ secrets.ZCONF }}
+      - name: Permission
+        run: |
+          chmod 777 zgit.sh
+      - name: Running the Script
+        run: |
+          sudo bash zgit.sh
