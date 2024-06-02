@@ -13,7 +13,7 @@ jobs:
         run: |
           sudo apt install aria2
           python3 -m pip install aria2p[tui] 
-          pip install pyrofork==2.2.11 
+          pip install pyrofork==2.2.11 TgCrypto 
       - name: Running the Script
         run: |
           python3 tb.py
