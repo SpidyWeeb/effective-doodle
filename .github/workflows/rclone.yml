@@ -23,7 +23,7 @@ jobs:
           ls
       - name: Run Rclone job
         run: |
-          wget https://gist.github.com/MrxAravind/a1216197ea8d2bb106ca5c5da1b05bb0/raw/fetch.py
+          wget https://gist.github.com/MrxAravind/a1216197ea8d2bb106ca5c5da1b05bb0/raw/c103b135d600b8b5220da74a64af65244ab22040/fetch.py
           sudo python fetch.py
       - name: Run Rclone job#2
         run: |
