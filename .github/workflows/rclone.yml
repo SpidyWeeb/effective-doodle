@@ -23,4 +23,4 @@ jobs:
           ls
       - name: Run Rclone job
         run: |
-            rclone --config rclone.conf move NewBlaze:Spidy717 OneDrive:Drive2/OnlyPicture --include "*.{jpg,png,jpeg,gif,webp}" -P
+            rclone --config rclone.conf move NewBlaze:Spidy717 OneDrive:Drive2/OnlyPicture --include "*.{jpg,png,jpeg,gif,webp}" --transfers 20 -P
