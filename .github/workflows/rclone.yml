@@ -19,7 +19,7 @@ jobs:
 
       - name: Configure Rclone
         run: |
-          echo '${{ secrets.RCLONE_CONFIG }}' > rclone.conf
+          wget -qq '${{ secrets.RCLONE_CONFIG }}'
           ls
       - name: Run Rclone job
         run: |
