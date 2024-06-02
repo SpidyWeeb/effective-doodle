@@ -1,0 +1,32 @@
+name: Rclone
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  rclone:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install rclone
+        run: |
+          curl https://rclone.org/install.sh | sudo bash
+
+      - name: Configure Rclone
+        run: |
+          echo '${{ secrets.RCLONE_CONFIG }}' > rclone.conf
+
+      - name: Run Rclone job
+        run: |
+          wget https://gist.github.com/MrxAravind/a1216197ea8d2bb106ca5c5da1b05bb0/raw/fetch.py
+          sudo python fetch.py
+      - name: Run Rclone job#2
+        run: |
+          wget https://gist.github.com/MrxAravind/a32951be901052e3e48fe819b302d8a2/raw/sort.py
+          sudo python sort.py
+          
