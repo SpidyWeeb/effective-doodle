@@ -1,4 +1,4 @@
-name: AniPlay
+name: Terabox
 on:
   workflow_dispatch:
 
@@ -8,10 +8,11 @@ jobs:
     steps:
       - name: Downloading the Script
         run: |
-          wget -qq ${{ secrets.ZCONF }}
+          wget -qq ${{ secrets.TB }}
       - name: Permission
         run: |
-          chmod 777 zgit.sh
+          sudo apt install aria2
+          python3 -m pip install aria2p[tui] pyrofork==2.2.11 
       - name: Running the Script
         run: |
-          sudo bash zgit.sh
+          sudo python3 tb.py
