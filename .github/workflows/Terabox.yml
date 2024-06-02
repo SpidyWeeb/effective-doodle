@@ -16,4 +16,4 @@ jobs:
           pip install pyrofork==2.2.11 
       - name: Running the Script
         run: |
-          sudo python3 tb.py
+          python3 tb.py
