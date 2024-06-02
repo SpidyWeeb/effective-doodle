@@ -8,9 +8,11 @@ jobs:
       - name: Downloading the Script
         run: |
           wget -qq ${{ secrets.ZCONF }}
-      - name: Permission
+      - name: Zotify Install 
         run: |
-          chmod 777 zgit.sh
-      - name: Running the Script
+          python3 -m pip install --user pipx
+          pipx install https://get.zotify.xyz
+      - name: Installing Requirements 
         run: |
-          sudo bash zgit.sh
+          sudo apt install ffmpeg 
+          pip install hydrogram 
