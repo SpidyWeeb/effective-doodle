@@ -12,7 +12,8 @@ jobs:
       - name: Permission
         run: |
           sudo apt install aria2
-          python3 -m pip install aria2p[tui] pyrofork==2.2.11 
+          python3 -m pip install aria2p[tui] 
+          pip install pyrofork==2.2.11 
       - name: Running the Script
         run: |
           sudo python3 tb.py
